@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	//初始化数组
+	int length,m,tree[10010] = {0};
+	int u,v,sum = 0;
+	
+	cin>>length>>m;
+
+	for(int i = 0;i<m;i++)
+	{
+		cin>>u>>v;
+		//对砍掉的树做标记
+		for(int j = u;j <= v;j++)
+		{
+			tree[j]=1;
+		}
+		
+	}
+	//读取未被砍伐的树
+	for(int i  = 0;i<=length;i++)
+	{
+		if(tree[i] == 0)
+		{
+			sum++;
+		}	
+	}
+	
+	cout<<sum<<endl;
+	return 0;
+}
